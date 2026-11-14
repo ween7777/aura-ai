@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10091f">
+  <meta name="description" content="AURA AI — твой личный ИИ-помощник">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>AURA AI</title>
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="brand"><div class="orb">✦</div><div><b>AURA AI</b><small>ТВОЙ ЛИЧНЫЙ ПОМОЩНИК</small></div></div>
+      <span class="status"><i></i> ДЕМО-РЕЖИМ</span>
+    </header>
+    <section class="hero">
+      <div class="glow"></div>
+      <div class="hero-orb">✧</div>
+      <h1>Привет! Я AURA.</h1>
+      <p>Твой цифровой помощник. Напиши сообщение или нажми на микрофон.</p>
+    </section>
+    <section class="chat" id="chat" aria-live="polite">
+      <article class="message assistant"><span class="avatar">✦</span><div class="bubble"><b>AURA</b><p>Привет! Я пока работаю в демонстрационном режиме. На следующем этапе подключим настоящую ИИ-модель.</p></div></article>
+    </section>
+    <form id="composer" class="composer">
+      <button type="button" id="mic" class="icon-btn" title="Голосовой ввод" aria-label="Голосовой ввод">🎙</button>
+      <input id="prompt" autocomplete="off" placeholder="Напиши AURA..." aria-label="Сообщение">
+      <button class="send" type="submit" aria-label="Отправить">➤</button>
+    </form>
+    <footer><span id="voiceState">Голосовой ввод зависит от браузера.</span><button id="speakToggle" class="text-btn" type="button">Озвучивать ответы: ВКЛ</button></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
