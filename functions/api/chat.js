@@ -68,7 +68,7 @@ export async function onRequestPost({ request, env }) {
     return jsonResponse({ error: "Последнее сообщение должно быть от пользователя." }, 400, request);
   }
 
-  const model = env.GEMINI_MODEL || "gemini-3.1-flash-lite";
+  const model = env.GEMINI_MODEL || "gemini-3.8-flash";
   const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
 
   try {
