@@ -88,6 +88,12 @@ export async function onRequestPost({ request, env }) {
     const result = await upstream.json().catch(() => ({}));
 
     if (!upstream.ok) {
+  const details = result.error?.message || "Причина не указана";
+
+  return jsonResponse({
+    error: `Ошибка Google (${upstream.status}): ${details}`
+  }, 502, request);
+}
       const status = upstream.status === 429 ? 429 : 502;
       const message = upstream.status === 429
         ? "Достигнут временный лимит бесплатного тарифа. Подожди немного и попробуй снова."
